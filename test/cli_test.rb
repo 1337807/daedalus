@@ -6,10 +6,9 @@ class CliTest < MiniTest::Unit::TestCase
     @output = @cli.output = StringIO.new
   end
 
-  def test_exit_command_does_not_dispatch
+  def test_game_does_not_execute_exit
     @cli.input = StringIO.new("exit\n")
-    @cli.dispatch.expects(:execute).never
+    @cli.game.expects(:execute).never
     @cli.start
   end
-
 end
