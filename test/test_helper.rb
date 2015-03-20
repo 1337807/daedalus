@@ -3,5 +3,4 @@ $LOAD_PATH.unshift(File.join(path, '..', 'lib'))
 
 require 'minitest/pride'
 require 'minitest/autorun'
-
 require 'mocha/mini_test'

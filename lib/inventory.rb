@@ -1,16 +1,15 @@
 class Inventory
-  @@items = []
-  @@strength = 0
-  
-  def add item
-    @@items.push(item)
-    @@strength += item[:strength]
-    "#{item} picked up!"
+  attr_accessor :items
+
+  def initialize
+    @items = []
   end
-  
+
+  def add item
+    self.items << item
+  end
+
   def drop item
-    @@items.delete(item)
-    @@strength -= item.strength
-    "#{item} dropped!"
+    self.items.delete item
   end
 end

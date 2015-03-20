@@ -2,14 +2,14 @@ require 'map'
 
 class Dispatch
   attr_accessor :map
-  
+
   def initialize
     @map = Map.new
   end
-  
+
   def execute command
     verb, noun = command.split.map(&:downcase)  
-    
+
     case verb
     when "move"
       self.map.move noun

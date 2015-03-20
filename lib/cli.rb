@@ -2,20 +2,21 @@ require 'dispatch'
 
 class Cli
   attr_accessor :dispatch, :input, :output
-  
+
   def initialize
     @input = $stdin
     @output = $stdout
     @dispatch = Dispatch.new
   end
-  
+
   def start
     system("clear") or system("cls")
     say "Welcome to Daedalus\n\n" 
-    
+
     infinity = true
     while infinity
-      command = self.input.gets.chomp
+      command = ask
+
       if command == 'exit' || command == 'quit' || command == 'oh god why stop it why'
         say "Bang! You're dead."
         infinity = false
@@ -24,6 +25,10 @@ class Cli
         say response
       end
     end
+  end
+
+  def ask
+    self.input.gets.chomp
   end
 
   def say message
