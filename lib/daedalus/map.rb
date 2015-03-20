@@ -2,15 +2,8 @@ require 'daedalus/item'
 
 module Daedalus
   class Map
-    SCENES = [
-      "You're just outside of a forest. You can hear a bubbling brook in the distance.",
-      "You're at the edge of a cliff, peering into the dark abyss.",
-      "You're at the top of a waterfall. Make a wish.",
-      "You are deep in a thick jungle. You feel a dark gaze upon you.",
-      "You stand before an ancient temple stretching deep into the ocean.",
-      "You stand before an army of goblins, poised to attack.",
-      "You're standing in a sea of roses. You smell blood in the air."
-    ]
+    SCENES = Daedalus.load_data('scenes')
+
     attr_accessor :player_position, :world, :items, :debug
 
     def initialize
@@ -65,7 +58,7 @@ module Daedalus
 
     def generate(position)
       return if self.world[position]
-      self.world[position] = SCENES.sample
+      self.world[position] = SCENES.values.map(&:values).flatten.sample
       existing_items = self.items[position]
 
       if rand(1..2).even?

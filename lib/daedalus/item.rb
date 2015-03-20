@@ -1,20 +1,11 @@
 module Daedalus
   class Item
+    ITEMS = Daedalus.load_data('items')
+
     attr_accessor :strength, :name
 
-    ITEMS = [
-      { :name => "bazooka", :strength => 5 },
-      { :name => "sword", :strength => 3 },
-      { :name => "stick", :strength => 1 },
-      { :name => "turd", :strength => -1 },
-      { :name => "shuriken", :strength => 2 },
-      { :name => "katana", :strength => 6 },
-      { :name => "herring", :strength => 10 },
-      { :name => "true love", :strength => 0 }
-    ]
-
     def self.random
-      item = ITEMS.sample
+      item = ITEMS.map { |k,v| { name: k, strength: v['strength'] } }.sample
       new(item)
     end
 
