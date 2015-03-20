@@ -1,0 +1,13 @@
+---
+dense forest:
+  dense forest:
+    - You're deep in a dense wood. The sunlight barely reaches the forest floor.
+    - You're standing in a small clearing next to a small stream.
+  desert:
+    - You emerge from the trees suddenly and look down a gentle slope into a vast desert.
+desert:
+  desert:
+    - You're at the base of a steep sand dune leaning into a strong wind.
+    - You gaze upon an endless expanse of fine sand bleached bone white.
+  forest:
+    - You're standing at the edge of the desert peering into a dense forest.

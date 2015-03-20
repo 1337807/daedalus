@@ -1,0 +1,17 @@
+---
+stick:
+  strength: 1
+club:
+  strength: 2
+sword:
+  strength: 3
+mace:
+  strength: 4
+spear:
+  strength: 4
+broad sword:
+  strength: 5
+trident:
+  strength: 6
+flame sword:
+  strength: 7
