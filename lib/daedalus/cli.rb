@@ -15,7 +15,6 @@ module Daedalus
       infinity = true
       while infinity
         command = ask
-
         if command == 'exit' || command == 'quit'
           say "Goodbye"
           infinity = false
@@ -30,7 +29,7 @@ module Daedalus
       self.input.gets.chomp
     end
 
-    def say message
+    def say(message)
       self.output.puts message
     end
 
